@@ -1,0 +1,487 @@
+{
+  "release": "0.1.0",
+  "date": "2026-11-18",
+  "hardware": "H100 80GB, TP2, 132 SM per GPU",
+  "purpose": "Packaging correctness and smoke validation; not a new 201-step performance study",
+  "training_environment": {
+    "python": "3.10.20",
+    "torch": "2.4.0+cu121",
+    "transformer_engine": "1.12.0+7a7225c4"
+  },
+  "training": {
+    "original": {
+      "steps": 3,
+      "completed": true,
+      "step_ms": [
+        3830.8,
+        246.7,
+        186.3
+      ],
+      "losses": [
+        1.718674,
+        2.011702,
+        2.216731
+      ],
+      "checks": {
+        "MLP": 28,
+        "PROJ": 28,
+        "RESNORM": 0
+      }
+    },
+    "paths_ag": {
+      "steps": 3,
+      "completed": true,
+      "step_ms": [
+        3992.2,
+        270.4,
+        162.9
+      ],
+      "losses": [
+        1.718674,
+        2.01219,
+        2.21601
+      ],
+      "checks": {
+        "MLP": 28,
+        "PROJ": 28,
+        "RESNORM": 0
+      }
+    },
+    "paths_rs": {
+      "steps": 3,
+      "completed": true,
+      "step_ms": [
+        3539.4,
+        219.2,
+        178.8
+      ],
+      "losses": [
+        1.718674,
+        2.011792,
+        2.216035
+      ],
+      "checks": {
+        "MLP": 28,
+        "PROJ": 28,
+        "RESNORM": 0
+      }
+    },
+    "paths_ar": {
+      "steps": 3,
+      "completed": true,
+      "step_ms": [
+        3930.0,
+        220.4,
+        187.1
+      ],
+      "losses": [
+        1.719895,
+        2.012026,
+        2.217489
+      ],
+      "checks": {
+        "MLP": 28,
+        "PROJ": 28,
+        "RESNORM": 28
+      }
+    },
+    "paths_ag_rs": {
+      "steps": 3,
+      "completed": true,
+      "step_ms": [
+        3489.0,
+        237.2,
+        172.4
+      ],
+      "losses": [
+        1.718674,
+        2.013371,
+        2.217712
+      ],
+      "checks": {
+        "MLP": 28,
+        "PROJ": 28,
+        "RESNORM": 0
+      }
+    },
+    "paths_ag_ar": {
+      "steps": 3,
+      "completed": true,
+      "step_ms": [
+        4021.3,
+        195.7,
+        164.4
+      ],
+      "losses": [
+        1.719895,
+        2.013101,
+        2.218654
+      ],
+      "checks": {
+        "MLP": 28,
+        "PROJ": 28,
+        "RESNORM": 28
+      }
+    },
+    "paths_rs_ar": {
+      "steps": 3,
+      "completed": true,
+      "step_ms": [
+        4399.4,
+        209.8,
+        163.9
+      ],
+      "losses": [
+        1.719895,
+        2.011257,
+        2.217572
+      ],
+      "checks": {
+        "MLP": 28,
+        "PROJ": 28,
+        "RESNORM": 28
+      }
+    },
+    "paths_ag_rs_ar": {
+      "steps": 3,
+      "completed": true,
+      "step_ms": [
+        4489.8,
+        263.2,
+        170.2
+      ],
+      "losses": [
+        1.719895,
+        2.013653,
+        2.218447
+      ],
+      "checks": {
+        "MLP": 28,
+        "PROJ": 28,
+        "RESNORM": 28
+      }
+    }
+  },
+  "kernel_environment": {
+    "torch": "2.14.1+cu130"
+  },
+  "kernel_smoke": {
+    "ag": {
+      "baseline_median": 265.2959899902344,
+      "faster_pairs": 20,
+      "operator": "ag",
+      "optimized_median": 258.0,
+      "paired_speedup": 1.027677552738136,
+      "pairs": [
+        [
+          265.67999267578125,
+          256.91200256347656
+        ],
+        [
+          262.9599914550781,
+          258.86399841308594
+        ],
+        [
+          266.3040008544922,
+          256.97601318359375
+        ],
+        [
+          266.1440124511719,
+          258.0
+        ],
+        [
+          265.2959899902344,
+          257.2640075683594
+        ],
+        [
+          266.4960021972656,
+          258.32000732421875
+        ],
+        [
+          265.10398864746094,
+          257.10401916503906
+        ],
+        [
+          263.2959899902344,
+          258.6079864501953
+        ],
+        [
+          265.53599548339844,
+          258.78399658203125
+        ],
+        [
+          262.2720031738281,
+          258.8479919433594
+        ],
+        [
+          267.24798583984375,
+          257.7279968261719
+        ],
+        [
+          263.4880065917969,
+          258.3359832763672
+        ],
+        [
+          264.9920196533203,
+          257.56800842285156
+        ],
+        [
+          263.2480010986328,
+          261.8560028076172
+        ],
+        [
+          265.80799865722656,
+          269.32798767089844
+        ],
+        [
+          262.6080017089844,
+          262.20799255371094
+        ],
+        [
+          266.43199157714844,
+          259.2639923095703
+        ],
+        [
+          263.79200744628906,
+          257.4239959716797
+        ],
+        [
+          266.11199951171875,
+          257.90399169921875
+        ],
+        [
+          264.3679962158203,
+          257.2480010986328
+        ],
+        [
+          266.57598876953125,
+          257.98399353027344
+        ]
+      ],
+      "timing": "kernel_only_us",
+      "validated": true
+    },
+    "rs": {
+      "baseline_median": 159.07200622558594,
+      "faster_pairs": 21,
+      "operator": "rs",
+      "optimized_median": 146.54399871826172,
+      "paired_speedup": 1.0843899583351295,
+      "pairs": [
+        [
+          159.13600158691406,
+          144.5760040283203
+        ],
+        [
+          159.60000610351562,
+          145.10399627685547
+        ],
+        [
+          161.4080047607422,
+          145.0240020751953
+        ],
+        [
+          158.11199188232422,
+          148.15999603271484
+        ],
+        [
+          158.54399871826172,
+          144.9280014038086
+        ],
+        [
+          158.44800567626953,
+          147.10400390625
+        ],
+        [
+          159.56800079345703,
+          144.20800018310547
+        ],
+        [
+          158.38399505615234,
+          146.54399871826172
+        ],
+        [
+          158.97600555419922,
+          145.1520004272461
+        ],
+        [
+          158.19200134277344,
+          146.19200134277344
+        ],
+        [
+          159.9199981689453,
+          145.61600494384766
+        ],
+        [
+          158.9759979248047,
+          147.05599975585938
+        ],
+        [
+          159.07200622558594,
+          146.99199676513672
+        ],
+        [
+          159.2800064086914,
+          146.7040023803711
+        ],
+        [
+          158.7199935913086,
+          146.36800384521484
+        ],
+        [
+          158.07999420166016,
+          147.58399963378906
+        ],
+        [
+          160.19200134277344,
+          147.6959991455078
+        ],
+        [
+          158.28800201416016,
+          146.57599639892578
+        ],
+        [
+          159.93600463867188,
+          148.0800018310547
+        ],
+        [
+          160.33600616455078,
+          149.2959976196289
+        ],
+        [
+          160.4000015258789,
+          144.47999572753906
+        ]
+      ],
+      "timing": "kernel_only_us",
+      "validated": true
+    },
+    "ar": {
+      "baseline_median": 133.31199645996094,
+      "faster_pairs": 21,
+      "operator": "ar",
+      "optimized_median": 124.01599884033203,
+      "paired_speedup": 1.0720558584192639,
+      "pairs": [
+        [
+          133.15199279785156,
+          122.72000503540039
+        ],
+        [
+          131.16799926757812,
+          124.01599884033203
+        ],
+        [
+          132.65599822998047,
+          123.63199996948242
+        ],
+        [
+          133.95199584960938,
+          123.5999984741211
+        ],
+        [
+          133.90399932861328,
+          124.87999725341797
+        ],
+        [
+          132.17599487304688,
+          123.64800262451172
+        ],
+        [
+          136.72000122070312,
+          123.39200210571289
+        ],
+        [
+          134.75199127197266,
+          124.78400039672852
+        ],
+        [
+          132.8320083618164,
+          123.90399932861328
+        ],
+        [
+          132.49600219726562,
+          124.25600051879883
+        ],
+        [
+          135.3600082397461,
+          131.79199981689453
+        ],
+        [
+          131.87200164794922,
+          125.04000091552734
+        ],
+        [
+          132.9280014038086,
+          123.32799911499023
+        ],
+        [
+          133.31199645996094,
+          128.0319938659668
+        ],
+        [
+          134.09600067138672,
+          123.71199798583984
+        ],
+        [
+          131.76000213623047,
+          127.3120002746582
+        ],
+        [
+          133.5040054321289,
+          123.3599967956543
+        ],
+        [
+          133.343994140625,
+          124.62400436401367
+        ],
+        [
+          133.6320037841797,
+          122.06399536132812
+        ],
+        [
+          132.9759979248047,
+          126.08000564575195
+        ],
+        [
+          134.09600067138672,
+          126.28800201416016
+        ]
+      ],
+      "timing": "kernel_only_us",
+      "validated": true
+    }
+  },
+  "timeout_cleanup": "PASS: a separate-session SIGINT-ignoring child was terminated; launcher returned 124",
+  "shell_syntax": "PASS",
+  "known_observations": [
+    "A cold-start original smoke run stalled and hit its 240-second timeout; an independent retry completed. This release does not claim to resolve every intermittent kernel stall.",
+    "An environment-path mixing failure was corrected by isolating the training PYTHONPATH; RS and AG+RS were rerun.",
+    "Paired kernel smoke measurements used a separate PyTorch environment and are not replacements for historical frozen-run measurements."
+  ],
+  "source_sha256": {
+    "src/tilescale_threeops/__init__.py": "c9d5fb0b8371a1837430e2793d3e8baa90c33bd413b593b4d08206a6db4ff26c",
+    "src/tilescale_threeops/analyze.py": "75eba626178b76873c45f8f88724e70acf4c9e22162114008bedd8d76c8b5d42",
+    "src/tilescale_threeops/autograd.py": "2b138bfbe72d074448716e1090335fc2634cd0680fedc0dc06ab50dcb80cc87f",
+    "src/tilescale_threeops/benchmark.py": "9d8b6b5f599e5f846845b78c51d8341f2dedfc3231146b31121eb3a196d1f909",
+    "src/tilescale_threeops/config.py": "d63dfd541b1e061f5f019929847ed7b516f7f10edb35f4acd1c156cda2a73fb4",
+    "src/tilescale_threeops/kernels/__init__.py": "13d407b3fcdb915b1f3378b7e7205af5a43d342d99a984636cdc47e82d6621a4",
+    "src/tilescale_threeops/kernels/activation.py": "633e95341fb104258cb95010c39dcc6ea713a1bc516fab564fc91385b20a5384",
+    "src/tilescale_threeops/kernels/ag.py": "5af200522f466168f4fb0f2411323c1128d8c934028e424b41403e7dc23f5667",
+    "src/tilescale_threeops/kernels/ar.py": "b1697c6afd87bf39d59346dcd4d51d67f4ab3f2b67a20a27e05bf7c25c61fe61",
+    "src/tilescale_threeops/kernels/baseline_ar.py": "a037f772c06806a533d3438c36f8ec384e36075f05b3e47a0d1719c8896ddcf6",
+    "src/tilescale_threeops/kernels/residual_norm.py": "406cd217ffeae29e3f6052ff332f283f65bf0c14af9889adc97055aeab3a7e11",
+    "src/tilescale_threeops/kernels/rs.py": "75b70b5df0f0e52f24b7606863c8fa9c3424ab1a82256a680698f83cf63eb03e",
+    "src/tilescale_threeops/launch.py": "d9e82b43073122155a4be441c922d72b6ded2cf18fe7bdcf29df501c9c93da26",
+    "src/tilescale_threeops/megatron.py": "28633ef47f5ec2f072a71be35e3f0ac68ab141158ee8757b370a6e2bbac79837",
+    "src/tilescale_threeops/native/vmm_dlpack.cc": "bfeeca7687c060c78f36050bb7018801d0d6e602dd2b57c6c5498c3e8c981c8b",
+    "src/tilescale_threeops/runtime.py": "df1ecd373a3fb991b35d59f6aa60ad4296e0f5cc7a02abb074c9144b4b954a44",
+    "src/tilescale_threeops/timing.py": "e47efd83b39a816f0a5af77422c595e98dcbc701bb279af086d97b6a47860036",
+    "src/tilescale_threeops/train.py": "a0dfc1a6f26a71de598f02d557ef98bf7e560b0df1e543fe652019c3fdeb94c6",
+    "src/tilescale_threeops/vmm.py": "05178eb9c57a91b58e8bd149c1d7cda66f1f5f504fc7bf6edb341c8ac1cc1e6f",
+    "scripts/build_native.py": "4c3fb384cc282ec2c034c9396048b294998cec5749252a163e052c3143723bb1",
+    "scripts/check_results.py": "b0c324ce017ef3f504ebdfd1b7689e4903c0256ec71c71c49bd96b377363d062",
+    "scripts/compare.sh": "da8ad05bedcc405ff73d8155006c5e4dc8c0f7bb34124f5df4062281effd15e6",
+    "scripts/train.sh": "a2892387b637469991dc60e0fe05df0f7305f97ec887efe7812d115e05296ebe"
+  }
+}

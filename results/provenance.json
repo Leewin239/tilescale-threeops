@@ -1,0 +1,32 @@
+{
+  "release": "0.1.0",
+  "historical_snapshot": "threepath_long201",
+  "upstream": {
+    "tilescale": "71e71457d40ed6e6a2dad297936bfdbff21d104b",
+    "Pai-Megatron-Patch": "a098ca5acbdeaf7172ce0393fa309b39a77506db"
+  },
+  "historical_sources": {
+    "ag_original_grid.py": "4cdb14dbfbfbe778684607a74a90f861a60eaa6ac4a0086fadeba64677df697f",
+    "rs_original_grid.py": "6c95455ec5bb29ce0df8df274bd7ac410d16e0ab83aaae0533c6c744fe54f9d9",
+    "ar_grid.py": "ac39dc378e13336c2ce16de328d2135397b919d92ba632385ba2480b00d9507f",
+    "megatron_tilelang_mlp.py": "bd8bf3001ec823fbefb4b86786b0ed70b9277e0115a55c3afb466527659ac0ed",
+    "qwen3_pretrained_threeops_train_sp4.py": "5b64155154f29198538996ed68bb56596afdf6e8c33710df4e5e133a27c5845a",
+    "megatron_qwen3_layer_profile.py": "064554814e938d5514d3811ffb3665d08c484450cee3ace486ebee2950cfd581"
+  },
+  "retained_modes": [
+    "original",
+    "paths_ag",
+    "paths_rs",
+    "paths_ar",
+    "paths_ag_rs",
+    "paths_ag_ar",
+    "paths_rs_ar",
+    "paths_ag_rs_ar"
+  ],
+  "changes_for_release": [
+    "Removed inactive experimental paths, replay, SM partitioning and automatic selection entry points.",
+    "Extracted the retained kernels and fixed-resource runtime into an installable package.",
+    "Made model, checkpoint, data, Python and Pai-Megatron locations configurable.",
+    "Retained the original path math, but simplified buffer setup and autograd glue. See package validation."
+  ]
+}
